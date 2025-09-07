@@ -2,29 +2,29 @@
 const PERFORMANCE_SHEETS = {
   // 1日目
   'day1_performance1': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 1日目第1公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 1日目第1公演のログシート
+    seats: '1wLASeHBC0Q4KnC_cyluKEu6wtCVBtPiNv7yiADPNloY', // 1日目第1公演の座席シート
+    log: '16fONsc5Ktv1UWAaYrb3LfJRllsQYdjC6wYBLkQBuEac'   // 1日目第1公演のログシート
   },
   'day1_performance2': {
-    seats: '164pnCFDZKmrHlwU0J857NzxRHBeFgdKLzxCwM7DKZmo', // 1日目第2公演の座席シート
-    log: '16ADG2Aniz6f_rbirpfngeLXh8D2Im2BA8uJotY394oU'   // 1日目第2公演のログシート
+    seats: '1LlfdQgwma0PKoP2l7R1sUd2PtjDs211UByloZJGzJPw', // 1日目第2公演の座席シート
+    log: '17LIw2buJTxu10RsufRa37mxIHfs8Jem-lYFyFeir7M4'   // 1日目第2公演のログシート
   },
   'day1_performance3': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 1日目第3公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 1日目第3公演のログシート
+    seats: '1ChzERkmw5dGfYcPxn1o8JTVTRJtnh5hWhYzKCUYbb2c', // 1日目第3公演の座席シート
+    log: '1-8yFJ64pav1iccWvQ5P81yOg0ZbwKf0-Sc4tl1uaJoU'   // 1日目第3公演のログシート
   },
   // 2日目
   'day2_performance1': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 2日目第1公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 2日目第1公演のログシート
+    seats: '17scOod0T2fsrWzWlwWOBhcpX-NhSjOjrBN8ySJcFvJA', // 2日目第1公演の座席シート
+    log: '1-AEey73FGes0iPPPigPZMhltjkohQ-5OEcgUHaavSKQ'   // 2日目第1公演のログシート
   },
   'day2_performance2': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 2日目第2公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 2日目第2公演のログシート
+    seats: '1eU0GVeRQoMd-PxrkalgW2VKY-jRZuVW_5rQt-KfjcgA', // 2日目第2公演の座席シート
+    log: '1-uySj1xh9JXn0a1VSx_ZF_aQMjADKVqgvkfmEosGMUY'   // 2日目第2公演のログシート
   },
   'day2_performance3': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 2日目第3公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 2日目第3公演のログシート
+    seats: '12PuN0RvjqHzupiqJ7peAeve-MU-DAXJmQfaE9imVowM', // 2日目第3公演の座席シート
+    log: '11G6a3YroQYq1R8MLTWF24GjaaMp-NQGN4i9dy4jHe2I'   // 2日目第3公演のログシート
   }
 };
 
