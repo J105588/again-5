@@ -6,8 +6,8 @@ const PERFORMANCE_SHEETS = {
     log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 1日目第1公演のログシート
   },
   'day1_performance2': {
-    seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 1日目第2公演の座席シート
-    log: '103hWNVu2MlfeP7vCSEAhJmeu18NZDb_vubbRpUBt7TI'   // 1日目第2公演のログシート
+    seats: '164pnCFDZKmrHlwU0J857NzxRHBeFgdKLzxCwM7DKZmo', // 1日目第2公演の座席シート
+    log: '16ADG2Aniz6f_rbirpfngeLXh8D2Im2BA8uJotY394oU'   // 1日目第2公演のログシート
   },
   'day1_performance3': {
     seats: '1-lBQMuwjs0YnOpSt3nI8jQmHyNOqUNHiP3i2xXMcbmA', // 1日目第3公演の座席シート
@@ -33,7 +33,7 @@ const SPREADSHEET_ID_KEY = '17w2V9kudoj_EAYUn-gsOG6PhH-_ComyWT6LTnWMXazg';
 const KEY_SHEET_NAME = 'keys';
 
 // 申込〆切
-const PARENT_APP_DEADLINE = new Date("2025-07-31T13:00:00+09:00"); 
+const PARENT_APP_DEADLINE = new Date("2025-09-13T23:59:59+09:00"); 
 
 // 時間帯に基づいてスプレッドシートIDを取得
 function getSheetIdsByTimeslot(timeslot) {
@@ -121,14 +121,15 @@ function submitMultipleSeats(timeslot, classNo, name, mail, selectedSeatsArr) {
         if (seatRow === String(sel.row) && seatCol === Number(sel.col)) {
           console.log(`座席 ${sel.row}-${sel.col} の現在の状態: ${seatStatus}`);
           
-          if (seatStatus !== "確保") {
+          if (seatStatus !== "確保" && seatStatus !== "予約済") {
             sheetSeats.getRange(i+1, 3).setValue("確保");
             sheetSeats.getRange(i+1, 4).setValue(name);
             seatResults.push(sel.row + "-" + sel.col + "：OK");
             console.log(`座席 ${sel.row}-${sel.col} を確保しました`);
           } else {
-            seatResults.push(sel.row + "-" + sel.col + "：既に確保済");
-            console.log(`座席 ${sel.row}-${sel.col} は既に確保済みです`);
+            const statusText = seatStatus === "確保" ? "既に確保済" : "予約済";
+            seatResults.push(sel.row + "-" + sel.col + "：" + statusText);
+            console.log(`座席 ${sel.row}-${sel.col} は${statusText}です`);
           }
           break;
         }
@@ -141,7 +142,7 @@ function submitMultipleSeats(timeslot, classNo, name, mail, selectedSeatsArr) {
     
     // ヘッダなければ追加（初回対応）
     if (logSheet.getLastRow() === 0) {
-      logSheet.appendRow(['タイムスタンプ', 'クラス', '氏名', 'メール', '座席リスト', '時間帯']);
+      logSheet.appendRow(['タイムスタンプ', 'クラス', '氏名', 'メール', '座席リスト', '']);
     }
     
     const seatList = selectedSeatsArr.map(s => s.row + "-" + s.col).join(",");
@@ -151,7 +152,7 @@ function submitMultipleSeats(timeslot, classNo, name, mail, selectedSeatsArr) {
       name,
       mail,
       seatList,
-      timeslot
+      '' // 時間帯は記入しない
     ]);
     
     console.log('ログ記録完了:', { classNo, name, mail, seatList, timeslot });
